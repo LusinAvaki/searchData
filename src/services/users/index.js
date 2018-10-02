@@ -7,15 +7,18 @@ function listUsers(req, res, next) {
     .catch(next)
 }
 
-function getUser(req, res, next) {
-  const {firstName, lastName} = req.body;
+function searchUsers(req, res, next) {
+  const {firstName, lastName} = req.query;
   
-  UsersModel.getUserByFirstName(firstName)
-    .then((data) => res.json(data))
-    .catch(next);
+  const searchQuery = {};
   
-  UsersModel.getUserByLastName(lastName)
-    .then((data) => res.json(data))
+  if(firstName){
+    searchQuery.firstName = firstName
+  } else if (lastName){
+    searchQuery.lastName = lastName
+  }
+  UsersModel.searchUser(searchQuery)
+    .then((user) => res.json(user))
     .catch(next)
 }
 
@@ -39,6 +42,6 @@ function addUser(req, res, next) {
 
 module.exports = {
   listUsers,
-  getUser,
+  searchUsers,
   addUser
 };

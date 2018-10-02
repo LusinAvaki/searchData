@@ -8,17 +8,14 @@ module.exports = (Users) => {
     return Users.find({});
   };
   
-  /**
-   * @param {string} firstName
-   * @description get users.
-   */
-  Users.getUserByFirstName = (firstName) => {
-    return Users.find({firstName})
+
+  Users.searchUser = () => {
+    return Users.find({})
   };
   
-  Users.getUserByLastName = (lastName) => {
-    return Users.find({lastName})
-  };
+  // Users.searchUser = (lastName) => {
+  //   return Users.find({lastName})
+  // };
   /**
    * @param {Object} userData
    * @description create users.

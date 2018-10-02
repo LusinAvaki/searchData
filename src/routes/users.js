@@ -7,12 +7,8 @@ router.get('/',
   userService.listUsers
 );
 
-router.get('/:firstName',
-  userService.getUser
-);
-
-router.get('/:lastName',
-  userService.getUser
+router.get('/:search',
+  userService.searchUsers
 );
 
 router.post('/',
