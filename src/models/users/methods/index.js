@@ -9,13 +9,11 @@ module.exports = (Users) => {
   };
   
 
-  Users.searchUser = () => {
-    return Users.find({})
+  Users.searchUser = (searchQuery) => {
+    return Users.findOne({searchQuery})
   };
   
-  // Users.searchUser = (lastName) => {
-  //   return Users.find({lastName})
-  // };
+
   /**
    * @param {Object} userData
    * @description create users.

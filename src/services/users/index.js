@@ -14,7 +14,8 @@ function searchUsers(req, res, next) {
   
   if(firstName){
     searchQuery.firstName = firstName
-  } else if (lastName){
+  }
+  if (lastName){
     searchQuery.lastName = lastName
   }
   UsersModel.searchUser(searchQuery)
