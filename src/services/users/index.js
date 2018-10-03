@@ -17,11 +17,11 @@ function searchUsers(req, res, next) {
   
   const searchQuery = {};
   
-  if(firstName){
+  if (firstName) {
     searchQuery.firstName = firstName
   }
   
-  if (lastName){
+  if (lastName) {
     searchQuery.lastName = lastName
   }
   UsersModel.searchUser(searchQuery)

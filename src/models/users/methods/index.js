@@ -11,11 +11,11 @@ module.exports = (Users) => {
    * @param searchQuery
    * @returns {Query|void}
    */
-
+  
   Users.searchUser = (searchQuery) => {
     return Users.findOne(searchQuery)
   };
-
+  
   /**
    * @param {Object} userData
    * @description create users.
@@ -24,5 +24,5 @@ module.exports = (Users) => {
   Users.createUser = (userData) => {
     return Users.create(userData);
   };
-
+  
 };
