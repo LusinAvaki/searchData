@@ -3,7 +3,7 @@ module.exports = (Users) => {
    * @description List all users.
    */
   Users.listAllUsers = () => {
-    return Users.find({});
+    return Users.find({}).limit(5);
   };
   
   /**
