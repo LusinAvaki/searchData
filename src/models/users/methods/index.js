@@ -1,5 +1,3 @@
-// const Promise = require('bluebird');
-
 module.exports = (Users) => {
   /**
    * @description List all users.
@@ -8,11 +6,14 @@ module.exports = (Users) => {
     return Users.find({});
   };
   
+  /**
+   * @param searchQuery
+   * @returns {Query|void}
+   */
 
   Users.searchUser = (searchQuery) => {
-    return Users.findOne({searchQuery})
+    return Users.findOne(searchQuery)
   };
-  
 
   /**
    * @param {Object} userData

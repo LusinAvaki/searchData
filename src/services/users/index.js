@@ -1,9 +1,14 @@
 const UsersModel = require('../../models/index').UsersModel;
 
+/**
+ * @param req
+ * @param res
+ * @param next
+ */
 
 function listUsers(req, res, next) {
   UsersModel.listAllUsers()
-    .then((users) => res.json(users))
+    .then((users) => res.status(200).json(users))
     .catch(next)
 }
 
@@ -15,19 +20,15 @@ function searchUsers(req, res, next) {
   if(firstName){
     searchQuery.firstName = firstName
   }
+  
   if (lastName){
     searchQuery.lastName = lastName
   }
   UsersModel.searchUser(searchQuery)
-    .then((user) => res.json(user))
+    .then((user) => res.status(200).json(user))
     .catch(next)
 }
 
-/**
- * @param req
- * @param res
- * @param next
- */
 function addUser(req, res, next) {
   const {firstName, lastName} = req.body;
   
